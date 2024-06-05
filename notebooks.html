@@ -437,7 +437,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x16d7ab7d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x103c6b690&gt;
 </pre></div>
 </div>
 </div>
@@ -521,76 +521,67 @@ with your book. For more information about this, see <a class="reference externa
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 173929 entries, 0 to 173928
-Data columns (total 15 columns):
+Data columns (total 36 columns):
  #   Column                           Non-Null Count   Dtype  
 ---  ------                           --------------   -----  
  0   don_id                           173929 non-null  object 
- 1   don_ty                           173929 non-null  object 
- 2   don_age                          173922 non-null  float64
- 3   don_ethnicity_pre2004            131260 non-null  float64
- 4   don_race_pre2004                 131260 non-null  float64
- 5   don_race                         173851 non-null  object 
- 6   don_race_srtr                    173815 non-null  object 
- 7   don_ethnicity_srtr               173929 non-null  object 
- 8   don_hgt_cm                       130924 non-null  float64
- 9   don_race_american_indian         173929 non-null  int64  
- 10  don_race_asian                   173929 non-null  int64  
- 11  don_race_black_african_american  173929 non-null  int64  
- 12  don_race_hispanic_latino         173929 non-null  int64  
- 13  don_race_native_hawaiian         173929 non-null  int64  
- 14  don_race_white                   173929 non-null  int64  
-dtypes: float64(4), int64(6), object(5)
-memory usage: 19.9+ MB
+ 1   pers_id                          173929 non-null  int64  
+ 2   don_ty                           173929 non-null  object 
+ 3   don_age_in_months                173922 non-null  float64
+ 4   don_age                          173922 non-null  float64
+ 5   don_gender                       173929 non-null  object 
+ 6   don_home_state                   170492 non-null  object 
+ 7   don_ethnicity_pre2004            131260 non-null  float64
+ 8   don_race_pre2004                 131260 non-null  float64
+ 9   don_race                         173851 non-null  object 
+ 10  don_race_srtr                    173815 non-null  object 
+ 11  don_ethnicity_srtr               173929 non-null  object 
+ 12  don_home_country                 0 non-null       float64
+ 13  don_hgt_cm                       130924 non-null  float64
+ 14  don_wgt_kg                       132825 non-null  float64
+ 15  don_recov_dt                     173929 non-null  object 
+ 16  don_relationship_ty              172919 non-null  object 
+ 17  don_diab                         101127 non-null  object 
+ 18  don_hyperten_diet                3283 non-null    object 
+ 19  don_hyperten_diuretics           3283 non-null    object 
+ 20  don_hyperten_other_meds          3283 non-null    object 
+ 21  don_ki_creat_preop               128276 non-null  float64
+ 22  don_bp_preop_syst                118935 non-null  float64
+ 23  don_bp_preop_diast               118915 non-null  float64
+ 24  pers_esrd_death_dt               79 non-null      float64
+ 25  pers_ssa_death_dt                1395 non-null    object 
+ 26  don_hyperten_postop              101066 non-null  object 
+ 27  pers_esrd_first_service_dt       706 non-null     float64
+ 28  pers_esrd_first_dial_dt          690 non-null     float64
+ 29  pers_esrd_ki_dgn                 332 non-null     float64
+ 30  don_race_american_indian         173929 non-null  int64  
+ 31  don_race_asian                   173929 non-null  int64  
+ 32  don_race_black_african_american  173929 non-null  int64  
+ 33  don_race_hispanic_latino         173929 non-null  int64  
+ 34  don_race_native_hawaiian         173929 non-null  int64  
+ 35  don_race_white                   173929 non-null  int64  
+dtypes: float64(14), int64(7), object(15)
+memory usage: 47.8+ MB
 None
+       don_age_in_months        don_age    don_race
+count      173922.000000  173922.000000  838.000000
+mean          493.620244      40.676142   65.250597
+std           139.174427      11.600951   48.149922
+min             0.000000       0.000000   24.000000
+25%           385.000000      32.000000   40.000000
+50%           489.000000      40.000000   40.000000
+75%           595.000000      49.000000   72.000000
+max          1151.000000      95.000000  248.000000
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /usr/local/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py:3802,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3801</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3802</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3803</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-
-<span class="nn">File /usr/local/anaconda3/lib/python3.11/site-packages/pandas/_libs/index.pyx:138,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-
-<span class="nn">File /usr/local/anaconda3/lib/python3.11/site-packages/pandas/_libs/index.pyx:165,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:5745,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:5753,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
-
-<span class="ne">KeyError</span>: &#39;pers_id&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Clean and convert data types</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pers_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pers_id&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;don_age_in_months&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;don_age_in_months&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;don_age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;don_age&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/anaconda3/lib/python3.11/site-packages/pandas/core/frame.py:3807,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3805</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3806</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">3807</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3808</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3809</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
-
-<span class="nn">File /usr/local/anaconda3/lib/python3.11/site-packages/pandas/core/indexes/base.py:3804,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3802</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3803</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3804</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">3805</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">3806</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">3808</span>     <span class="c1">#  the TypeError.</span>
-<span class="g g-Whitespace">   </span><span class="mi">3809</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-
-<span class="ne">KeyError</span>: &#39;pers_id&#39;
-</pre></div>
-</div>
+<img alt="_images/684389f364195f892ed335c4439843ceb1aec7dacf2a24027f24234a2e35e226.png" src="_images/684389f364195f892ed335c4439843ceb1aec7dacf2a24027f24234a2e35e226.png" />
+<img alt="_images/5a55f653ded79422ced068e1776282eb2db3e24067934dd48051f557903d9891.png" src="_images/5a55f653ded79422ced068e1776282eb2db3e24067934dd48051f557903d9891.png" />
+<img alt="_images/a572bb7900e6a7d4f10f966328edb2b1da535224fe2c49682c4d9795fed2f037.png" src="_images/a572bb7900e6a7d4f10f966328edb2b1da535224fe2c49682c4d9795fed2f037.png" />
+<img alt="_images/c772b73e79893149962e09d8fab5f43d656537871a1b746dceb7c08ddf24bc69.png" src="_images/c772b73e79893149962e09d8fab5f43d656537871a1b746dceb7c08ddf24bc69.png" />
+<img alt="_images/1e331fbccee74bb6595891f879e805a4d014b89a457c93eb0b4db879962bca78.png" src="_images/1e331fbccee74bb6595891f879e805a4d014b89a457c93eb0b4db879962bca78.png" />
+<img alt="_images/4e590b77575156a0535c4f08eae6fe61e50a66dfaa520fff8d65e308701a1eae.png" src="_images/4e590b77575156a0535c4f08eae6fe61e50a66dfaa520fff8d65e308701a1eae.png" />
+<img alt="_images/8f6a50050f403f7334731e8cb0290d3c49588a7d20fff53dc990c94d04f18d5e.png" src="_images/8f6a50050f403f7334731e8cb0290d3c49588a7d20fff53dc990c94d04f18d5e.png" />
+<img alt="_images/a8b75e259071e820e8f4cf901e685d952ccaa9a9059ed605b22c1f4c29dfa29e.png" src="_images/a8b75e259071e820e8f4cf901e685d952ccaa9a9059ed605b22c1f4c29dfa29e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -615,6 +606,11 @@ None
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The DataFrame has 173929 rows and 36 columns.
+</pre></div>
+</div>
+</div>
 </div>
 <p>This will give you a quick idea of how large your dataset is.</p>
 <hr class="docutils" />
@@ -625,6 +621,173 @@ None
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>don_id</th>
+      <th>pers_id</th>
+      <th>don_ty</th>
+      <th>don_age_in_months</th>
+      <th>don_age</th>
+      <th>don_gender</th>
+      <th>don_home_state</th>
+      <th>don_ethnicity_pre2004</th>
+      <th>don_race_pre2004</th>
+      <th>don_race</th>
+      <th>...</th>
+      <th>don_hyperten_postop</th>
+      <th>pers_esrd_first_service_dt</th>
+      <th>pers_esrd_first_dial_dt</th>
+      <th>pers_esrd_ki_dgn</th>
+      <th>don_race_american_indian</th>
+      <th>don_race_asian</th>
+      <th>don_race_black_african_american</th>
+      <th>don_race_hispanic_latino</th>
+      <th>don_race_native_hawaiian</th>
+      <th>don_race_white</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>HRG962</td>
+      <td>289</td>
+      <td>L</td>
+      <td>490.0</td>
+      <td>40.0</td>
+      <td>F</td>
+      <td>TX</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>8: White</td>
+      <td>...</td>
+      <td>N</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>IT5273</td>
+      <td>484</td>
+      <td>L</td>
+      <td>312.0</td>
+      <td>26.0</td>
+      <td>F</td>
+      <td>OH</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>8: White</td>
+      <td>...</td>
+      <td>N</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>HRL860</td>
+      <td>840</td>
+      <td>L</td>
+      <td>648.0</td>
+      <td>54.0</td>
+      <td>M</td>
+      <td>ND</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>8: White</td>
+      <td>...</td>
+      <td>N</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ZWB847</td>
+      <td>967</td>
+      <td>L</td>
+      <td>564.0</td>
+      <td>47.0</td>
+      <td>M</td>
+      <td>NY</td>
+      <td>1.0</td>
+      <td>8.0</td>
+      <td>2000: Hispanic/Latino</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ALB852</td>
+      <td>1145</td>
+      <td>L</td>
+      <td>326.0</td>
+      <td>27.0</td>
+      <td>F</td>
+      <td>CA</td>
+      <td>1.0</td>
+      <td>8.0</td>
+      <td>2000: Hispanic/Latino</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 36 columns</p>
+</div></div></div>
 </div>
 <p>You can restrict the DataFrame to a subset of rows and columns using slicing. Here’s how to keep only the first 1000 rows and the first 9 columns:</p>
 <div class="cell docutils container">
@@ -634,6 +797,11 @@ None
 
 <span class="c1"># Show the shape of the new DataFrame to confirm</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The shape of the subset DataFrame is </span><span class="si">{</span><span class="n">subset_df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The shape of the subset DataFrame is (1000, 9)
 </pre></div>
 </div>
 </div>
@@ -650,6 +818,100 @@ None
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>don_id</th>
+      <th>pers_id</th>
+      <th>don_ty</th>
+      <th>don_age_in_months</th>
+      <th>don_age</th>
+      <th>don_gender</th>
+      <th>don_home_state</th>
+      <th>don_ethnicity_pre2004</th>
+      <th>don_race_pre2004</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>HRG962</td>
+      <td>289</td>
+      <td>L</td>
+      <td>490.0</td>
+      <td>40.0</td>
+      <td>F</td>
+      <td>TX</td>
+      <td>2.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>IT5273</td>
+      <td>484</td>
+      <td>L</td>
+      <td>312.0</td>
+      <td>26.0</td>
+      <td>F</td>
+      <td>OH</td>
+      <td>2.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>HRL860</td>
+      <td>840</td>
+      <td>L</td>
+      <td>648.0</td>
+      <td>54.0</td>
+      <td>M</td>
+      <td>ND</td>
+      <td>2.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ZWB847</td>
+      <td>967</td>
+      <td>L</td>
+      <td>564.0</td>
+      <td>47.0</td>
+      <td>M</td>
+      <td>NY</td>
+      <td>1.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ALB852</td>
+      <td>1145</td>
+      <td>L</td>
+      <td>326.0</td>
+      <td>27.0</td>
+      <td>F</td>
+      <td>CA</td>
+      <td>1.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -676,6 +938,18 @@ None
 <span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">subset_df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">binary_vars</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Categorical Variables:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cat_vars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Continuous Variables:
+[&#39;pers_id&#39;, &#39;don_age_in_months&#39;, &#39;don_age&#39;, &#39;don_ethnicity_pre2004&#39;, &#39;don_race_pre2004&#39;]
+
+Binary Variables:
+[&#39;don_gender&#39;, &#39;don_ethnicity_pre2004&#39;]
+
+Categorical Variables:
+[&#39;don_id&#39;, &#39;don_ty&#39;, &#39;don_home_state&#39;]
 </pre></div>
 </div>
 </div>
@@ -722,6 +996,9 @@ None
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b35ecc1de37f275b5299bd9e729da3e8cc20670d7ad50eff46f0f99710fe8a87.png" src="_images/b35ecc1de37f275b5299bd9e729da3e8cc20670d7ad50eff46f0f99710fe8a87.png" />
 </div>
 </div>
 </section>
